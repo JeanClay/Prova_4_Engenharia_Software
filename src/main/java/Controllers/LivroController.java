@@ -13,4 +13,8 @@ public class LivroController {
 
         dao.cadastraLivro(novoLivro);
     }
+
+    public Livro mostraPorId(int escolha) {
+        return dao.getById(escolha);
+    }
 }

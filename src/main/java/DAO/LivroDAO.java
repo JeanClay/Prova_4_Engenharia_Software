@@ -50,4 +50,24 @@ public class LivroDAO {
         }
     }
 
+    public Livro getById(long id){
+        String sql = "SELECT FROM livros WHERE livro_id = ?";
+
+        Livro livro = null;
+
+        try{
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setLong(1,id);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()){
+                livro.setId(resultSet.getLong("livro_id"));
+                livro.setNome(resultSet.getString("nome"));
+                livro.getGenero().setId(resultSet.getLong("genero"));
+            }
+            return livro;
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 }

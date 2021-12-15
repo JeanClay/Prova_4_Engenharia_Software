@@ -1,6 +1,7 @@
 package View;
 
 import Controllers.LivroController;
+import Models.Livro;
 
 import java.util.Scanner;
 
@@ -21,6 +22,7 @@ public class LivroView {
                 cadastraLivro();
                 break;
             case 2:
+                mostraPorId();
                 break;
             case 3:
                 break;
@@ -32,7 +34,7 @@ public class LivroView {
 
     }
 
-    private void cadastraLivro() {
+    public void cadastraLivro() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Digite nome do livro");
@@ -42,5 +44,15 @@ public class LivroView {
         int genero = input.nextInt();
 
         controller.cadastraLivro(nome,genero);
+    }
+
+    public void mostraPorId(){
+        Scanner input = new Scanner(System.in);
+
+        //lista livros
+        System.out.println("escolha o livro");
+        int escolha = input.nextInt();
+
+        Livro livro = controller.mostraPorId(escolha);
     }
 }
