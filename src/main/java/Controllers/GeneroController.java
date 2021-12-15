@@ -13,11 +13,11 @@ public class GeneroController {
         novoGenero = dao.insereGenero(novoGenero);
     }
 
-    public void editaGenero(String nome) {
+    public void editaGenero(int escolha, String nome) {
         Genero genero = new Genero();
 
         genero.setNome(nome);
 
-        dao.editaGenero(genero);
+        dao.editaGenero(escolha,genero);
     }
 }

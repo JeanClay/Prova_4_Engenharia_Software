@@ -24,7 +24,7 @@ public class GeneroDAO {
 
     public Genero insereGenero(Genero genero){
         String sql = "INSERT INTO generos "+
-                "(name)" +
+                "(nome)" +
                 "VALUES (?)";
 
         try{
@@ -42,13 +42,13 @@ public class GeneroDAO {
         }
     }
 
-    public void editaGenero(Genero genero) {
-        String sql = "UPDATE genero SET name = ? WHERE genero_id = ?";
+    public void editaGenero(long escolha, Genero genero) {
+        String sql = "UPDATE generos SET nome = ? WHERE genero_id = ?";
 
         try{
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1,genero.getNome());
-            statement.setLong(2,genero.getId());
+            statement.setLong(2,escolha);
             statement.executeUpdate();
         }catch (SQLException e){
             throw new RuntimeException(e);

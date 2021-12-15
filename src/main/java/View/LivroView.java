@@ -3,6 +3,7 @@ package View;
 import Controllers.LivroController;
 import Models.Livro;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class LivroView {
@@ -25,8 +26,10 @@ public class LivroView {
                 mostraPorId();
                 break;
             case 3:
+                mostraPorBiblioteca();
                 break;
             case 4:
+                mostraPorGenero();
                 break;
             default:
                 break;
@@ -42,8 +45,10 @@ public class LivroView {
         System.out.println("Escolha seu genero");
         //listar generos via generoview
         int genero = input.nextInt();
+        System.out.println("Escolha a biblioteca");
+        int biblioteca = input.nextInt();
 
-        controller.cadastraLivro(nome,genero);
+        controller.cadastraLivro(nome,genero,biblioteca );
     }
 
     public void mostraPorId(){
@@ -54,5 +59,27 @@ public class LivroView {
         int escolha = input.nextInt();
 
         Livro livro = controller.mostraPorId(escolha);
+
+        System.out.println(livro);
+    }
+
+    private void mostraPorBiblioteca() {
+        Scanner input = new Scanner(System.in);
+        //lista biblioteca
+        System.out.println("Escolha a biblioteca");
+        int escolha = input.nextInt();
+
+        System.out.println(controller.mostraPorBiblioteca(escolha));
+
+    }
+
+    public void mostraPorGenero(){
+        Scanner input = new Scanner(System.in);
+
+        //lista generos
+        System.out.println("escolha o genero");
+        int escolha = input.nextInt();
+
+        System.out.println(controller.mostraPorGenero(escolha));
     }
 }

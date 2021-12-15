@@ -5,6 +5,7 @@ public class Livro {
     Long id;
     String nome;
     Genero genero;
+    Biblioteca biblioteca;
 
     public Livro() {
     }
@@ -31,5 +32,23 @@ public class Livro {
 
     public void setGenero(Genero genero) {
         this.genero = genero;
+    }
+
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
+    }
+
+    @Override
+    public String toString() {
+        return "Livro{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", genero=" + genero +
+                ", biblioteca=" + biblioteca +
+                '}';
     }
 }

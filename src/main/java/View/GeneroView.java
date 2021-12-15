@@ -31,11 +31,13 @@ public class GeneroView {
 
 //        lista generos
 //        escolhe qual genero mudar
-//        int escolha = input.nextInt();
+        System.out.println("escolha o genero");
+        int escolha = input.nextInt();
         System.out.println("digite novo nome");
-        String nome = input.nextLine();
-//        controller.editaGenero(escolha, nome);
-        controller.editaGenero(nome);
+        String nome = input.next();
+
+        controller.editaGenero(escolha, nome);
+
     }
 
     private void insereGenero() {

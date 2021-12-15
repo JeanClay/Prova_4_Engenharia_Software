@@ -34,4 +34,13 @@ public class Biblioteca {
     public void setLivroList(List<Livro> livroList) {
         this.livroList = livroList;
     }
+
+    @Override
+    public String toString() {
+        return "Biblioteca{" +
+                "id=" + id +
+                ", Nome='" + Nome + '\'' +
+                ", livroList=" + livroList +
+                '}';
+    }
 }
